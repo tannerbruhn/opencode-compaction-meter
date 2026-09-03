@@ -4,7 +4,10 @@
   "description": "OpenCode TUI plugin: how many times the session has compacted, tool calls per cycle, room after each restart, and whether the last summary was cut off. Spots compaction thrash while you work.",
   "type": "module",
   "license": "MIT",
-  "author": "Tanner Bruhn",
+  "author": {
+    "name": "Tanner Bruhn",
+    "url": "https://github.com/tannerbruhn"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tannerbruhn/opencode-compaction-meter.git"
@@ -24,13 +27,19 @@
     "sidebar",
     "llama.cpp"
   ],
-  "oc-plugin": ["tui"],
+  "oc-plugin": [
+    "tui"
+  ],
   "exports": {
     "./tui": {
       "import": "./src/tui.tsx"
     }
   },
-  "files": ["src", "README.md", "LICENSE"],
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "opencode": ">=1.18.18"
   },
@@ -40,8 +49,14 @@
     "solid-js": "*"
   },
   "peerDependenciesMeta": {
-    "@opencode-ai/plugin": { "optional": true },
-    "@opentui/solid": { "optional": true },
-    "solid-js": { "optional": true }
+    "@opencode-ai/plugin": {
+      "optional": true
+    },
+    "@opentui/solid": {
+      "optional": true
+    },
+    "solid-js": {
+      "optional": true
+    }
   }
 }

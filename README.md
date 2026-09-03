@@ -37,7 +37,15 @@ On terminals narrower than 120 columns, where OpenCode hides the sidebar, the pr
 
 ## Install
 
-Until the npm package is published, install it as a file plugin. TUI plugins are not auto-discovered, so both steps are needed:
+```sh
+opencode plugin opencode-compaction-meter -g
+```
+
+That installs the package into your global OpenCode config and adds it to `tui.json`. Drop `-g` to install it for the current project only. Restart OpenCode afterwards; plugins load at startup.
+
+### Without npm
+
+TUI plugins are not auto-discovered, so a file install needs both steps:
 
 ```sh
 mkdir -p ~/.config/opencode/tui-plugins
@@ -54,16 +62,14 @@ Then add it to `~/.config/opencode/tui.json` (create the file if it does not exi
 }
 ```
 
-Restart OpenCode. Nothing renders until the session has compacted at least once, so open a session that already has, or wait for the first one.
-
 Do not put the file in `~/.config/opencode/plugin/`. That directory is auto-discovered for *server* plugins and will try to load it the wrong way.
 
-Once published to npm the install will be `opencode plugin opencode-compaction-meter`, which patches tui.json for you.
+Nothing renders until the session has compacted at least once, so open a session that already has, or wait for the first one.
 
 ## Options
 
 ```json
-"plugin": [["./tui-plugins/compaction-meter.tsx", { "badge": "◆" }]]
+"plugin": [["opencode-compaction-meter", { "badge": "◆" }]]
 ```
 
 - `badge` – glyph in front of the count on narrow terminals. Default `↻`. Use `◆` for fonts without the Arrows block, or a Nerd Font icon such as `""`.
