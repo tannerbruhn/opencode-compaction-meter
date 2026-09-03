@@ -86,6 +86,10 @@ Everything comes from the TUI's own session state plus one fetch of the full mes
 
 The summary's own input size is deliberately not shown. OpenCode keeps a verbatim tail of recent turns and summarises only the older head, with old tool outputs already pruned, so that number is much smaller than the live context and mostly noise.
 
+## Development
+
+`npm install` then `npm run build` compiles `src/tui.tsx` to `dist/tui.js` with the same Solid transform OpenCode applies to file plugins. The npm package ships that build because OpenCode's transform deliberately skips anything under `node_modules`; the file install above uses the `.tsx` source directly and is transformed by OpenCode at load time.
+
 ## Requirements
 
 - OpenCode 1.18.18 or newer (the TUI plugin API with render slots).
