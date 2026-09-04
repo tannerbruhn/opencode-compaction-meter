@@ -1,6 +1,6 @@
 {
   "name": "opencode-compaction-meter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "OpenCode TUI plugin: how many times the session has compacted, tool calls per cycle, room after each restart, and whether the last summary was cut off. Spots compaction thrash while you work.",
   "type": "module",
   "license": "MIT",
@@ -65,5 +65,8 @@
     "@babel/core": "^7.29.7",
     "@babel/preset-typescript": "^7.29.7",
     "babel-preset-solid": "^1.9.15"
+  },
+  "engines": {
+    "opencode": ">=1.18.18"
   }
 }
